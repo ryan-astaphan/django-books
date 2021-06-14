@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     # 'allauth.socialaccount.providers.facebook',
-    # 'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.google',
     # 'allauth.socialaccount.providers.instagram',
 
     # Local
@@ -165,3 +165,15 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 # djago-allauth social login
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '259420772133-8oaeb9qlqbves6kv2ng50thu2n6rvrdp.apps.googleusercontent.com',
+            'secret': 'TdhkHFpWO2APj7M-98WBvWY8',
+            'key': ''
+        }
+    }
+}
