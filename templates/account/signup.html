@@ -12,4 +12,6 @@
     <button class="btn btn-success" type="submit">Sign Up</button>
   </form>
   <a href="{% provider_login_url 'google' %}">Sign Up with Google</a>
+  {% providers_media_js %}
+  <a href="{% provider_login_url "facebook" method="js_sdk" %}">Sign Up with Facebook</a>
 {% endblock content %}

@@ -44,9 +44,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    # 'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
-    # 'allauth.socialaccount.providers.instagram',
 
     # Local
     'accounts',
@@ -163,17 +162,12 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+''' Allauth Facebook Login 
+1. When the site goes live, FB requires https, so uncomment the below http protocol setting.
+2. When the site is deployed to a live domain, a callback URI needs to be added to the 
+Facebook app. The link will be https://domain.com/accounts/facebook/login/callback/
+'''
+# ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
-# djago-allauth social login
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '259420772133-8oaeb9qlqbves6kv2ng50thu2n6rvrdp.apps.googleusercontent.com',
-            'secret': 'TdhkHFpWO2APj7M-98WBvWY8',
-            'key': ''
-        }
-    }
-}
+
