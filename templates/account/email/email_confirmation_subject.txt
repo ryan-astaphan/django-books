@@ -1,0 +1,13 @@
+{% load account %}{% user_display user as user_display %}{% load i18n %}{% autoescape off %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}\
+Hello from {{ site_name }}!
+
+
+A new account with the username {{ user_display }} has recently signed-up \
+using your email address.
+
+To confirm this is you, go to {{ activate_url }}
+{% endblocktrans %}{% endautoescape %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+Thank you from {{ site_name }}!
+{{ site_domain }}{% endblocktrans %}

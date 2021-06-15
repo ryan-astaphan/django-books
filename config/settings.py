@@ -152,19 +152,30 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_EMAIL_VERIFICATION = 'none'
 ''' Allauth Facebook Login 
 1. When the site goes live, FB requires https, so uncomment the below http protocol setting.
 2. When the site is deployed to a live domain, a callback URI needs to be added to the 
 Facebook app. The link will be https://domain.com/accounts/facebook/login/callback/
 '''
 # ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
+
+
+# Email
+DEFAULT_FROM_EMAIL = 'accounts@tattoo-manager.net'
+''' The below settings are for SendinBlue. They do not work on localhost
+So they need to be activated when deploying the live site.
+'''
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp-relay.sendinblue.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'ryanastaphan@gmail.com'
+# EMAIL_HOST_PASSWORD = 'DIsmQ1aWdRj8zFX7'
 
 
