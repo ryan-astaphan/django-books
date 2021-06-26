@@ -4,10 +4,20 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-  <h1>Homepage</h1>
-  <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}"
-  method="get">
-    <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search"
-    aria-label="Search">
-  </form>
+  <h1>About this project:</h1>
+  <p>This project served as an introduction into Django. In this project 
+    I extended my knowledge or was introduced to these concepts: </p>
+  <ul>
+    <li>Custom users (sub-classing AbstractUser)</li>
+    <li>Authentication and Social Logins via the allauth module</li>
+    <li>Model fields and attributes</li>
+    <li>ForeignKey model relationships</li>
+    <li>Class-based views</li>
+    <li>Docker</li>
+    <li>Permissions (LoginRequiredMixin)</li>
+    <li>Querysets</li>
+    <li>Basics of integrating Bootstrap</li> 
+    <li>Basics of security (custom admin URL, XSS, SQL injection, csrf, clickjacking, 
+      https, HSTS and secure cookies.</li> 
+  </ul>
 {% endblock content %}
